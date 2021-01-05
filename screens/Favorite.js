@@ -1,11 +1,13 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { SafeAreaView, View, Text } from "react-native";
+import Header from "../components/header/Header";
 
 const Favorite = () => {
   return (
-    <View>
+    <SafeAreaView>
+      <Header />
       <Text>Favorite</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 

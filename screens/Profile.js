@@ -1,11 +1,13 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { SafeAreaView, Text } from "react-native";
+import Header from "../components/header/Header";
 
 const Profile = () => {
   return (
-    <View>
+    <SafeAreaView>
+      <Header />
       <Text>Profile</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 

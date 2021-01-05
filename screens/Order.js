@@ -1,11 +1,13 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { SafeAreaView, View, Text } from "react-native";
+import Header from "../components/header/Header";
 
 const Order = () => {
   return (
-    <View>
+    <SafeAreaView>
+      <Header />
       <Text>Order</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 
