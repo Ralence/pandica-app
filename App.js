@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
+import * as Font from "expo-font";
 import { StyleSheet, Text, View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -10,6 +11,14 @@ import { Home, Order, OrderItem, Favorite, Profile } from "./screens";
 const Stack = createStackNavigator();
 
 const App = () => {
+  const [loaded] = Font.useFonts({
+    "Roboto-Black": require("./assets/fonts/Roboto-Black.ttf"),
+    "Roboto-Regular": require("./assets/fonts/Roboto-Regular.ttf"),
+  });
+
+  if (!loaded) {
+    return null;
+  }
   return (
     <NavigationContainer>
       <Stack.Navigator

@@ -12,11 +12,13 @@ import {
 } from "react-native";
 import { COLORS, images, SIZES } from "../constants";
 import Header from "../components/header/Header";
+import MenuCategories from "../components/menu-categories/MenuCategories";
 
 const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Header />
+      <MenuCategories />
     </SafeAreaView>
   );
 };
