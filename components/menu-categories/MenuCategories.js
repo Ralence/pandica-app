@@ -3,7 +3,7 @@ import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
 import { SIZES, FONTS, COLORS, icons } from "../../constants";
 import MENU from "../../data/menu.json";
 
-const MENU_KEYS = Object.keys(MENU);
+const MENU_KEYS = Object.keys(MENU).slice(0, -1);
 
 const MenuCategories = () => {
   const renderItem = ({ item }) => {
@@ -40,13 +40,13 @@ const MenuCategories = () => {
             backgroundColor: COLORS.white,
           }}
         >
-          <Image source={icons.user} resizeMode="contain" style={{ width: 30, height: 30 }} />
+          <Image source={icons.noodles} resizeMode="contain" style={{ width: 30, height: 30 }} />
         </View>
         <Text
           style={{
             marginTop: SIZES.padding,
             color: COLORS.white,
-            ...FONTS.body5,
+            ...FONTS.body4,
             textAlign: "center",
           }}
         >
@@ -64,7 +64,7 @@ const MenuCategories = () => {
         data={MENU_KEYS}
         horizontal
         showsHorizontalScrollIndicator={false}
-        keyExtractor={(item) => item.title}
+        keyExtractor={(item) => MENU[item].title}
         renderItem={renderItem}
         contentContainerStyle={{ paddingVertical: SIZES.padding * 2 }}
       />
