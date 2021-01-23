@@ -8,6 +8,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import Tabs from "./navigation/tabs";
 import { Home, Order, OrderItem, Favorite, Profile } from "./screens";
 
+import StoreProvider from "./store";
+
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -44,4 +46,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+const AppWithStore = () => (
+  <StoreProvider>
+    <App />
+  </StoreProvider>
+);
+
+export default AppWithStore;
